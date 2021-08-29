@@ -6,3 +6,22 @@
   <%= form.password_field :password_confirmation, id: 'password_confirmation' %>
   <%= form.submit 'Register' %>
 <% end %>
+<%= bootstrap_form_with(model: @user, local: true) do |form| %>
+<%= form.text_field :name %>
+<%= form.submit 'Register' %>
+<% end %>
+
+<div class="ui form">
+  <div class="inline fields">
+    <label>Phone Number</label>
+    <div class="field">
+      <input type="text" placeholder="(xxx)">
+    </div>
+    <div class="field">
+      <input type="text" placeholder="xxx">
+    </div>
+    <div class="field">
+      <input type="text" placeholder="xxxx">
+    </div>
+  </div>
+</div>
