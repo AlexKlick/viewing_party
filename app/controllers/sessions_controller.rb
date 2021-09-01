@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         redirect_to '/dashboard'
       end
     else
-      flash[:alert] = "No matching account!"
+      flash[:danger] = "No matching account!"
       redirect_to root_path
     end
   end
