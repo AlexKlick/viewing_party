@@ -29,37 +29,6 @@
         }
       }
 
-      .line {
-        list-style-type:none;
-        display: flex;
-        align-items: center;
-        margin-bottom: 0px;
-        padding-left: 0px;
-
-        .movie-rating {
-          color: whitesmoke;
-          font-weight: 800;
-          font-size: 2.5rem;
-          .rating {
-            font-weight: 600;
-          }
-          #rating {
-            border: 1px solid whitesmoke;
-          }
-        }
-        .party-btn {
-          margin-left: 20px;
-          padding-bottom: 15px;
-          .btn {
-            background-color: rgb(226, 226, 226);
-            transition: background-color 0.2s linear;
-            &:hover {
-              transform: scale(1.01);
-              background-color: rgb(184, 208, 209);
-            }
-          }
-        }
-      }
       .menu {
         .item {
           color: whitesmoke;

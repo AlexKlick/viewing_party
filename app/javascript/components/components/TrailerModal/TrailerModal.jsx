@@ -14,7 +14,7 @@ const TrailerModal = (props) => {
       <div
         className="modal fade "
         id="videoModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="videoModalLabel"
         aria-hidden="true"
       >
@@ -26,9 +26,8 @@ const TrailerModal = (props) => {
               src={`https://www.youtube.com/embed/${props.video}`}
               id="Iframe"
               title="Movie Trailer"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Movie.styles.scss";
 import MoviePoster from "../components/MoviePoster/MoviePoster";
-import TrailerModal from "../components/TrailerModal/TrailerModal";
+import MovieMenu from "../components/MovieMenu/MovieMenu";
 
 const MovieDetails = (props) => {
   const runtime =
@@ -26,28 +26,11 @@ const MovieDetails = (props) => {
             <a className="title"> {props.title} </a>
             <span>({props.release})</span>
           </div>
-          <ul className="line">
-            <li>
-              <div className="movie-rating">
-                <div className="rating">
-                  <h3>{props.vote_average} User Rating</h3>
-                </div>
-                <div className="ui green progress active" id="rating">
-                  <div
-                    className="bar"
-                    style={{ width: `${props.vote_average * 10}%` }}
-                  ></div>
-                  <div className="progress"></div>
-                </div>
-              </div>
-            </li>
-            <li className="party-btn">
-              <a className="btn" href={`/parties/new?movie_id=${props.id}`}>
-                Create Viewing Party
-              </a>
-            </li>
-            <TrailerModal video={props.video} />
-          </ul>
+          <MovieMenu
+            vote_average={props.vote_average}
+            id={props.id}
+            video={props.video}
+          />
           <div className="ui top attached tabular menu">
             {props.genres.map((genre) => (
               <div className="item">{genre.name}</div>
