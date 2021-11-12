@@ -10,22 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
-
- body {
-  display: flex;
+.page-container { 
+  position: relative;
   min-height: 100vh;
-  flex-direction: column;
 }
-
-main {
-  flex: 1;
+.main-content {
+  padding-bottom: 170px;
 }
-
-footer {
-  display: flex;
-  align-self: baseline;
-  flex-direction: row;
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 20px; 
+  background-color: rgb(168, 168, 168);
+  background-size: cover;
 }

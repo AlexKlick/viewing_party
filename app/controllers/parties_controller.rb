@@ -10,8 +10,10 @@ class PartiesController < ApplicationController
     data[:user_id] = current_user.id
     party = Party.create(data)
     if party.save
-      params[:friend_ids].each do |id|
-        Attendee.create(user_id: id, party_id: party.id)
+      if params[:friend_ids]
+        params[:friend_ids].each do |id|
+          Attendee.create(user_id: id, party_id: party.id)
+        end
       end
       redirect_to dashboard_index_path
     else

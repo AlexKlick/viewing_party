@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
     seconds = minutes * 60
     ActiveSupport::Duration.build(seconds).inspect
   end
+
+  private
+  
+  def require_login
+    unless current_user
+      flash[:warning] = 'Must be logged in to view this page!'
+      redirect_to '/'
+    end
+  end
 end
