@@ -47,18 +47,6 @@
             border: 1px solid whitesmoke;
           }
         }
-        .trailer {
-          margin-left: 20px;
-          padding-bottom: 15px;
-          .btn {
-            background-color: rgb(226, 226, 226);
-            transition: background-color 0.2s linear;
-            &:hover {
-              transform: scale(1.01);
-              background-color: rgb(184, 208, 209);
-            }
-          }
-        }
         .party-btn {
           margin-left: 20px;
           padding-bottom: 15px;
