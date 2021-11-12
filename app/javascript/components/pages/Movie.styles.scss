@@ -8,19 +8,6 @@
     padding: 40px;
     background-image: linear-gradient(to right, rgba(5.49%, 5.49%, 7.06%, 1.00) 150px, rgba(5.49%, 5.49%, 7.06%, 0.65) 100%);
     display: flex;
-    .poster {
-      border-radius: 14px;
-      width: 300px;
-      min-width: 300px;
-      height: 450px;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      .poster-img {
-        width: 300px;
-        height: 450px;
-      }
-    }
     .movie-card {
       display: flex;
       align-items: flex-start;
@@ -46,7 +33,7 @@
         list-style-type:none;
         display: flex;
         align-items: center;
-        margin-right: 20px;
+        margin-bottom: 0px;
         padding-left: 0px;
 
         .movie-rating {
@@ -57,7 +44,7 @@
             font-weight: 600;
           }
           #rating {
-            border: 2px solid whitesmoke;
+            border: 1px solid whitesmoke;
           }
         }
         .trailer {
