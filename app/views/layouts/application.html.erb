@@ -3,7 +3,7 @@
   <head>
     <title>ViewingParty</title>
     <%= csrf_meta_tags %>
-
+    <script src="/node_modules/node-vibrant/dist/vibrant.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
@@ -13,50 +13,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   </head>
 
   <body>
-    <main>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Viewing Party</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="page-container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Viewing Party</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/discover">Discover</a>
+            </li>
+            <% if session[:user_id] %>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
+                <%= link_to "Logout", session_path(session), method: :delete, class: "nav-link" %>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/dashboard">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="/discover">Discover</a>
-              </li>
-              <% if session[:user_id] %>
-                <li class="nav-item">
-                  <%= link_to "Logout", session_path(session), method: :delete, class: "nav-link" %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+            <% end %>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert alert-#{name}" %>
       <% end %>
-      <div class="container">
+      <div class="main-content">
         <%= yield %>
       </div>
-    </main>
-    <footer>
+    <footer class="footer">
       <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="The MovieDB Logo" width="75px" style="margin:10px" >
-      <div>
         <p>
           Thank you to <a href="https://www.themoviedb.org/about/logos-attribution">The MovieDB</a> for providing the movie data that is used in this application.
         </p>
@@ -65,6 +63,7 @@
         </p>
       </div>
     </footer>
+    </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

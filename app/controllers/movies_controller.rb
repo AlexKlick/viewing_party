@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
   def show
     movie = MovieServices.new.find_movie_details(movie_find_params[:id])
     @movie = Movie.new(movie)
+    @friends = User.all
   end
 
   private

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: :index
   resources :sessions, only: [:new, :create, :destroy]
   resources :discover, only: :index
-  resources :friends, only: :create
+  resources :friends, only: [:create, :index]
   resources :movies, only: [:index, :show]
   resources :parties, only: [:new, :create]
 

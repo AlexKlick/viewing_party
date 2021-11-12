@@ -44,6 +44,8 @@ class MovieServices < ApiService
 
   def movie_video(id)
     results = get_data("https://api.themoviedb.org/3/movie/#{id}/videos?api_key=#{ENV['movies_api_key']}&language=en-US").get
-    get_json(results)[:results][0][:key]
+    if get_json(results)[:results] != []
+      get_json(results)[:results][0][:key]
+    end
   end
 end

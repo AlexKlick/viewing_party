@@ -3,9 +3,9 @@
 <div>
   <%=link_to "Discover Movies", discover_index_path, class: "nav-link" %>
 </div>
-<%= react_component("AddFriend")%>
 <div class="row">
   <section class="col-6" id="friends">
+  <%= react_component("AddFriend")%>
     <div id="add_friend">
       <%= form_with url: friends_path,local: true, method: :post do |form| %>
         <%= form.label :email, 'Email:' %>
