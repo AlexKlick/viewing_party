@@ -1,5 +1,6 @@
 import React from "react";
 import "./Movie.styles.scss";
+import MoviePoster from "../components/MoviePoster/MoviePoster";
 
 const MovieDetails = (props) => {
   const runtime =
@@ -18,13 +19,7 @@ const MovieDetails = (props) => {
       }}
     >
       <div className="dimmer">
-        <div className="poster">
-          <img
-            className="poster-img"
-            src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${props.poster_path}`}
-            alt="..."
-          />
-        </div>
+        <MoviePoster poster_path={props.poster_path} />
         <div className="movie-card">
           <div className="movie-title">
             <a className="title"> {props.title} </a>
@@ -91,7 +86,7 @@ const MovieDetails = (props) => {
               </a>
             </li>
           </ul>
-          <div className="ui top attached tabular menu mb-3">
+          <div className="ui top attached tabular menu">
             {props.genres.map((genre) => (
               <div className="item">{genre.name}</div>
             ))}
