@@ -130,7 +130,7 @@ Search Movies
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/AlexKlick/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/AlexKlick/viewing-party.svg?style=for-the-badge
 [contributors-url]: https://github.com/AlexKlick/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/AlexKlick/repo.svg?style=for-the-badge
 [forks-url]: https://github.com/AlexKlick/repo_name/network/members
